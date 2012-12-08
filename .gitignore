@@ -25,3 +25,6 @@ Mandatory2.xcodeproj/xcuserdata/tamen.xcuserdatad/xcschemes/ALL_BUILD.xcscheme
 Mandatory2.xcodeproj/xcuserdata/tamen.xcuserdatad/xcschemes/Mandatory2.xcscheme
 Mandatory2.xcodeproj/xcuserdata/tamen.xcuserdatad/xcschemes/ZERO_CHECK.xcscheme
 Mandatory2.xcodeproj/xcuserdata/tamen.xcuserdatad/xcschemes/xcschememanagement.plist
+*.dep
+Mandatory2.build/Debug/ALL_BUILD.build/build-state~.dat
+bin/Release/Debug/data_temp.csv
