@@ -2,7 +2,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6.0)
 
 # The name of the project.
-PROJECT(Pathplanning)
+PROJECT(Mandatory2)
 MESSAGE(${PROJECT_NAME})
 
 # Used to resolve absolute path names
@@ -37,5 +37,5 @@ ELSE()
 	SET(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${ROOT}/libs/${CMAKE_BUILD_TYPE}" CACHE PATH "Archive directory" FORCE)
 ENDIF()
 
-ADD_EXECUTABLE(Pathplanning Pathplanning.cpp )
-TARGET_LINK_LIBRARIES(Pathplanning ${ROBWORK_LIBRARIES})
+ADD_EXECUTABLE(Mandatory2 main.cpp )
+TARGET_LINK_LIBRARIES(Mandatory2 ${ROBWORK_LIBRARIES})
