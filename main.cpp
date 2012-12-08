@@ -10,6 +10,7 @@ void ass_i();
 
 WorkCell::Ptr wc;
 Device::Ptr device;
+Frame* tool;
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -25,6 +26,14 @@ int main(int argc, char** argv) {
 		cout << "Device: " << deviceName << " not found!" << endl;
         return 1;
 	}
+    
+    string toolFramName = "ENDMILL4";
+    cout << "Finding frame for tool: " << toolFramName << "." << endl;
+    tool = wc->findFrame(toolFramName);
+    if (tool == NULL) {
+        cout << "Toolframe not found!" << endl;
+        return 1;
+    }
     
     ass_i();
     
