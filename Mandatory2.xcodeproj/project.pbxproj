@@ -1,685 +1,913 @@
 // !$*UTF8*$!
 {
-       archiveVersion = 1;
-       classes = {
-       };
-       objectVersion = 46;
-       objects = {
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
 
 /* Begin PBXAggregateTarget section */
-              997729A5EB774794967A61E4 /* ALL_BUILD */ = {
-                     isa = PBXAggregateTarget;
-                     buildConfigurationList = 449C21D88D9745C187867FE3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
-                     buildPhases = (
-                            7FFBEA63107E4CB4B8758A5F /* CMake Rules */,
-                     );
-                     dependencies = (
-                            EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */,
-                            AC5AD477F2734E37A12ECD8B /* PBXTargetDependency */,
-                     );
-                     name = ALL_BUILD;
-                     productName = ALL_BUILD;
-              };
-              73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */ = {
-                     isa = PBXAggregateTarget;
-                     buildConfigurationList = 1C5147607D514913AC5E17CF /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
-                     buildPhases = (
-                            961E6733AF6D4A8482B652E1 /* CMake Rules */,
-                     );
-                     dependencies = (
-                     );
-                     name = ZERO_CHECK;
-                     productName = ZERO_CHECK;
-              };
+		73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C5147607D514913AC5E17CF /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				961E6733AF6D4A8482B652E1 /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		997729A5EB774794967A61E4 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 449C21D88D9745C187867FE3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7FFBEA63107E4CB4B8758A5F /* CMake Rules */,
+			);
+			dependencies = (
+				EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */,
+				AC5AD477F2734E37A12ECD8B /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-42BBAEE3902E4B7DB2E9974B /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/main.cpp */ = {isa = PBXBuildFile; fileRef = 90DDBC5F9E41423AA983AF01 /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/main.cpp */; settings = { COMPILER_FLAGS = ""; }; };
-6F9BBE2112814CB5868D753C /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = EE8CE3187A00434584CE4D2F /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */; settings = { COMPILER_FLAGS = ""; }; };
+		42BBAEE3902E4B7DB2E9974B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 90DDBC5F9E41423AA983AF01 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-              D1E2BA65E116429FACFE37E9 /*  */ = {
-                     isa = PBXBuildStyle;
-              };
-              5477F38B27FD40C896EAC423 /* Debug */ = {
-                     isa = PBXBuildStyle;
-                     buildSettings = {
-                            COPY_PHASE_STRIP = NO;
-                     };
-                     name = Debug;
-              };
-              F6F32278194648188F1B3CD7 /* Release */ = {
-                     isa = PBXBuildStyle;
-                     buildSettings = {
-                            COPY_PHASE_STRIP = NO;
-                     };
-                     name = Release;
-              };
-              B7DC4E61A41A493A95BA8D51 /* MinSizeRel */ = {
-                     isa = PBXBuildStyle;
-                     buildSettings = {
-                            COPY_PHASE_STRIP = NO;
-                     };
-                     name = MinSizeRel;
-              };
-              BBB0E1BDC6E244EBBA25E8D2 /* RelWithDebInfo */ = {
-                     isa = PBXBuildStyle;
-                     buildSettings = {
-                            COPY_PHASE_STRIP = NO;
-                     };
-                     name = RelWithDebInfo;
-              };
-/* End PBXBuildStyle section */
-
 /* Begin PBXContainerItemProxy section */
-              C46873B9CEFD40DC8CB70E83 /* PBXContainerItemProxy */ = {
-                     isa = PBXContainerItemProxy;
-                     containerPortal = 06A4772CBC3549A0B04F0FB3 /* Project object */;
-                     proxyType = 1;
-                     remoteGlobalIDString = 73EC8C2E6C4E45AA8F1A1B1A;
-                     remoteInfo = ZERO_CHECK;
-              };
-              34C77140C99748888C4CE769 /* PBXContainerItemProxy */ = {
-                     isa = PBXContainerItemProxy;
-                     containerPortal = 06A4772CBC3549A0B04F0FB3 /* Project object */;
-                     proxyType = 1;
-                     remoteGlobalIDString = D6CD0878E9A34C589B731C7D;
-                     remoteInfo = Mandatory2;
-              };
+		34C77140C99748888C4CE769 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A4772CBC3549A0B04F0FB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D6CD0878E9A34C589B731C7D;
+			remoteInfo = Mandatory2;
+		};
+		C46873B9CEFD40DC8CB70E83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06A4772CBC3549A0B04F0FB3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73EC8C2E6C4E45AA8F1A1B1A;
+			remoteInfo = ZERO_CHECK;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-EE8CE3187A00434584CE4D2F /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.text"; name = "CMakeLists.txt"; path = "CMakeLists.txt"; sourceTree = SOURCE_ROOT; };
-90DDBC5F9E41423AA983AF01 /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.cpp.cpp"; name = "main.cpp"; path = "main.cpp"; sourceTree = SOURCE_ROOT; };
-0744D33A0C7C4BAF893E4C5A /* Mandatory2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Mandatory2; refType = 0; sourceTree = BUILT_PRODUCTS_DIR; };
+		0744D33A0C7C4BAF893E4C5A /* Mandatory2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = Mandatory2; sourceTree = BUILT_PRODUCTS_DIR; };
+		90DDBC5F9E41423AA983AF01 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		EE8CE3187A00434584CE4D2F /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-              287CC4F00E5449EFA0611B66  = {
-                     isa = PBXGroup;
-                     children = (
-                            503C16FB36DD4157B93ACCC0 /* Sources */,
-                            B262DD640514433582F3D30A /* Resources */,
-                            06522948CE3248AA8A744BDE /* Products */,
-                     );
-                     sourceTree = "<group>";
-              };
-              503C16FB36DD4157B93ACCC0 /* Sources */ = {
-                     isa = PBXGroup;
-                     children = (
-                            C533A5E1F2B54A119BF1F5C5 /* ALL_BUILD */,
-                            035BB408E6F04BDB93C6E9CF /* Mandatory2 */,
-                            561A6472141E4CC384FBF1AD /* ZERO_CHECK */,
-                     );
-                     name = Sources;
-                     sourceTree = "<group>";
-              };
-              B262DD640514433582F3D30A /* Resources */ = {
-                     isa = PBXGroup;
-                     children = (
-                     );
-                     name = Resources;
-                     sourceTree = "<group>";
-              };
-              C533A5E1F2B54A119BF1F5C5 /* ALL_BUILD */ = {
-                     isa = PBXGroup;
-                     children = (
-                            175432D218F345128BA6607E /* CMake Rules */,
-                            EE8CE3187A00434584CE4D2F /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */,
-                     );
-                     name = ALL_BUILD;
-                     sourceTree = "<group>";
-              };
-              175432D218F345128BA6607E /* CMake Rules */ = {
-                     isa = PBXGroup;
-                     children = (
-                     );
-                     name = "CMake Rules";
-                     sourceTree = "<group>";
-              };
-              035BB408E6F04BDB93C6E9CF /* Mandatory2 */ = {
-                     isa = PBXGroup;
-                     children = (
-                            2B4A64CDF430496DA1762FC5 /* Source Files */,
-                            EE8CE3187A00434584CE4D2F /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */,
-                     );
-                     name = Mandatory2;
-                     sourceTree = "<group>";
-              };
-              2B4A64CDF430496DA1762FC5 /* Source Files */ = {
-                     isa = PBXGroup;
-                     children = (
-                            90DDBC5F9E41423AA983AF01 /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/main.cpp */,
-                     );
-                     name = "Source Files";
-                     sourceTree = "<group>";
-              };
-              561A6472141E4CC384FBF1AD /* ZERO_CHECK */ = {
-                     isa = PBXGroup;
-                     children = (
-                            65BF9F79B7D549D8A840030B /* CMake Rules */,
-                            EE8CE3187A00434584CE4D2F /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeLists.txt */,
-                     );
-                     name = ZERO_CHECK;
-                     sourceTree = "<group>";
-              };
-              65BF9F79B7D549D8A840030B /* CMake Rules */ = {
-                     isa = PBXGroup;
-                     children = (
-                     );
-                     name = "CMake Rules";
-                     sourceTree = "<group>";
-              };
-              06522948CE3248AA8A744BDE /* Products */ = {
-                     isa = PBXGroup;
-                     children = (
-                            0744D33A0C7C4BAF893E4C5A /* Mandatory2 */,
-                     );
-                     name = Products;
-                     sourceTree = "<group>";
-              };
+		035BB408E6F04BDB93C6E9CF /* Mandatory2 */ = {
+			isa = PBXGroup;
+			children = (
+				2B4A64CDF430496DA1762FC5 /* Source Files */,
+				EE8CE3187A00434584CE4D2F /* CMakeLists.txt */,
+			);
+			name = Mandatory2;
+			sourceTree = "<group>";
+		};
+		06522948CE3248AA8A744BDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0744D33A0C7C4BAF893E4C5A /* Mandatory2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		175432D218F345128BA6607E /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		287CC4F00E5449EFA0611B66 = {
+			isa = PBXGroup;
+			children = (
+				503C16FB36DD4157B93ACCC0 /* Sources */,
+				B262DD640514433582F3D30A /* Resources */,
+				06522948CE3248AA8A744BDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2B4A64CDF430496DA1762FC5 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				90DDBC5F9E41423AA983AF01 /* main.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		503C16FB36DD4157B93ACCC0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C533A5E1F2B54A119BF1F5C5 /* ALL_BUILD */,
+				035BB408E6F04BDB93C6E9CF /* Mandatory2 */,
+				561A6472141E4CC384FBF1AD /* ZERO_CHECK */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		561A6472141E4CC384FBF1AD /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				65BF9F79B7D549D8A840030B /* CMake Rules */,
+				EE8CE3187A00434584CE4D2F /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		65BF9F79B7D549D8A840030B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B262DD640514433582F3D30A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C533A5E1F2B54A119BF1F5C5 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				175432D218F345128BA6607E /* CMake Rules */,
+				EE8CE3187A00434584CE4D2F /* CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-              D6CD0878E9A34C589B731C7D /* Mandatory2 */ = {
-                     isa = PBXNativeTarget;
-                     buildConfigurationList = 2E2666B22D8F4ECEB6638C29 /* Build configuration list for PBXNativeTarget "Mandatory2" */;
-                     buildPhases = (
-                            7E4A67738A714396869A65A5 /* Sources */,
-                            1E11F7B48C894F51B587C666 /* CMake PostBuild Rules */,
-                     );
-                     buildRules = (
-                     );
-                     dependencies = (
-                            EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */,
-                     );
-                     name = Mandatory2;
-                     productName = Mandatory2;
-                     productReference = 0744D33A0C7C4BAF893E4C5A /* Mandatory2 */;
-                     productType = "com.apple.product-type.tool";
-              };
+		D6CD0878E9A34C589B731C7D /* Mandatory2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E2666B22D8F4ECEB6638C29 /* Build configuration list for PBXNativeTarget "Mandatory2" */;
+			buildPhases = (
+				7E4A67738A714396869A65A5 /* Sources */,
+				1E11F7B48C894F51B587C666 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */,
+			);
+			name = Mandatory2;
+			productName = Mandatory2;
+			productReference = 0744D33A0C7C4BAF893E4C5A /* Mandatory2 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-              06A4772CBC3549A0B04F0FB3 /* Project object */ = {
-                     isa = PBXProject;
-                     attributes = {
-                            BuildIndependentTargetsInParallel = YES;
-                     };
-                     buildConfigurationList = 629300D73E8B4BAA9B873B5F /* Build configuration list for PBXProject  "Mandatory2" */;
-                     buildSettings = {
-                     };
-                     buildStyles = (
-                            5477F38B27FD40C896EAC423 /* Debug */,
-                            F6F32278194648188F1B3CD7 /* Release */,
-                            B7DC4E61A41A493A95BA8D51 /* MinSizeRel */,
-                            BBB0E1BDC6E244EBBA25E8D2 /* RelWithDebInfo */,
-                     );
-                     compatibilityVersion = "Xcode 3.2";
-                     hasScannedForEncodings = 0;
-                     mainGroup = 287CC4F00E5449EFA0611B66;
-                     projectDirPath = ".";
-                     projectRoot = "";
-                     targets = (
-                            997729A5EB774794967A61E4 /* ALL_BUILD */,
-                            D6CD0878E9A34C589B731C7D /* Mandatory2 */,
-                            73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */,
-                     );
-              };
+		06A4772CBC3549A0B04F0FB3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0450;
+			};
+			buildConfigurationList = 629300D73E8B4BAA9B873B5F /* Build configuration list for PBXProject "Mandatory2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 287CC4F00E5449EFA0611B66;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				997729A5EB774794967A61E4 /* ALL_BUILD */,
+				D6CD0878E9A34C589B731C7D /* Mandatory2 */,
+				73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */,
+			);
+		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-              3E1053FCF7E0405DB1990555 /*  */ = {
-                     isa = PBXShellScriptBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                     );
-                     inputPaths = (
-                     );
-                     outputPaths = (
-                     );
-                     runOnlyForDeploymentPostprocessing = 0;
-                     shellPath = /bin/sh;
-                     shellScript = "# shell script goes here
-exit 0";
-                     showEnvVarsInLog = 0;
-              };
-              7FFBEA63107E4CB4B8758A5F /* CMake Rules */ = {
-                     isa = PBXShellScriptBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                     );
-                     name = "CMake Rules";
-                     runOnlyForDeploymentPostprocessing = 0;
-                     shellPath = /bin/sh;
-                     shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
-                     showEnvVarsInLog = 0;
-              };
-              1E11F7B48C894F51B587C666 /* CMake PostBuild Rules */ = {
-                     isa = PBXShellScriptBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                     );
-                     name = "CMake PostBuild Rules";
-                     runOnlyForDeploymentPostprocessing = 0;
-                     shellPath = /bin/sh;
-                     shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/Mandatory2_postBuildPhase.make$CONFIGURATION all";
-                     showEnvVarsInLog = 0;
-              };
-              09BA2312A54749A1884821FC /*  */ = {
-                     isa = PBXShellScriptBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                     );
-                     inputPaths = (
-                     );
-                     outputPaths = (
-                     );
-                     runOnlyForDeploymentPostprocessing = 0;
-                     shellPath = /bin/sh;
-                     shellScript = "# shell script goes here
-exit 0";
-                     showEnvVarsInLog = 0;
-              };
-              961E6733AF6D4A8482B652E1 /* CMake Rules */ = {
-                     isa = PBXShellScriptBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                     );
-                     name = "CMake Rules";
-                     runOnlyForDeploymentPostprocessing = 0;
-                     shellPath = /bin/sh;
-                     shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
-                     showEnvVarsInLog = 0;
-              };
+		1E11F7B48C894F51B587C666 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/Mandatory2_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		7FFBEA63107E4CB4B8758A5F /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		961E6733AF6D4A8482B652E1 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code -f /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-              7E4A67738A714396869A65A5 /* Sources */ = {
-                     isa = PBXSourcesBuildPhase;
-                     buildActionMask = 2147483647;
-                     files = (
-                            42BBAEE3902E4B7DB2E9974B /* /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/main.cpp */,
-                     );
-                     runOnlyForDeploymentPostprocessing = 0;
-              };
+		7E4A67738A714396869A65A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42BBAEE3902E4B7DB2E9974B /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-              EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */ = {
-                     isa = PBXTargetDependency;
-                     target = 73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */;
-                     targetProxy = C46873B9CEFD40DC8CB70E83 /* PBXContainerItemProxy */;
-              };
-              AC5AD477F2734E37A12ECD8B /* PBXTargetDependency */ = {
-                     isa = PBXTargetDependency;
-                     target = D6CD0878E9A34C589B731C7D /* Mandatory2 */;
-                     targetProxy = 34C77140C99748888C4CE769 /* PBXContainerItemProxy */;
-              };
+		AC5AD477F2734E37A12ECD8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D6CD0878E9A34C589B731C7D /* Mandatory2 */;
+			targetProxy = 34C77140C99748888C4CE769 /* PBXContainerItemProxy */;
+		};
+		EAF993A94AAF4B53ACA9AAA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73EC8C2E6C4E45AA8F1A1B1A /* ZERO_CHECK */;
+			targetProxy = C46873B9CEFD40DC8CB70E83 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-              AA44420E41CB41E6BF974061 /* Debug */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-                            ONLY_ACTIVE_ARCH = YES;
-                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
-                     };
-                     name = Debug;
-              };
-              BDA899DFCC9345ECB71CFC75 /* Release */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-                            ONLY_ACTIVE_ARCH = YES;
-                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
-                     };
-                     name = Release;
-              };
-              23A17705447846F19ED47199 /* MinSizeRel */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-                            ONLY_ACTIVE_ARCH = YES;
-                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
-                     };
-                     name = MinSizeRel;
-              };
-              5AA968E582FE4D70A5DD08E9 /* RelWithDebInfo */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-                            ONLY_ACTIVE_ARCH = YES;
-                            SDKROOT = "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
-                     };
-                     name = RelWithDebInfo;
-              };
-              78A3AA4478A7408DA060AFED /* Debug */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ALL_BUILD;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Debug;
-              };
-              BA1DD6462D0744BE941A3005 /* Release */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ALL_BUILD;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Release;
-              };
-              69BC8F8EFF4240B6892D383D /* MinSizeRel */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ALL_BUILD;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = MinSizeRel;
-              };
-              6E88461C5ADF4C0EB1A29B5C /* RelWithDebInfo */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ALL_BUILD;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = RelWithDebInfo;
-              };
-              0B986C6B85C649B3921AB415 /* Debug */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/Debug;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
-                            OTHER_CFLAGS = "    ";
-                            OTHER_CPLUSPLUSFLAGS = "    ";
-                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a -framework AGL -framework OpenGL /opt/local/lib/libxerces-c.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_regex-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_program_options-mt.dylib /usr/local/lib/libboost_test_exec_monitor-mt.a /usr/local/lib/libboost_unit_test_framework-mt.dylib /usr/lib/liblapack.dylib /usr/lib/libblas.dylib /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = Mandatory2;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Debug;
-              };
-              7C06A9AFA743488AAF79F93B /* Release */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/Release;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 3;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
-                            OTHER_CFLAGS = "    -DNDEBUG  ";
-                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
-                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a -framework AGL -framework OpenGL /opt/local/lib/libxerces-c.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_regex-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_program_options-mt.dylib /usr/local/lib/libboost_test_exec_monitor-mt.a /usr/local/lib/libboost_unit_test_framework-mt.dylib /usr/lib/liblapack.dylib /usr/lib/libblas.dylib /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = Mandatory2;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Release;
-              };
-              3CF444936AE74931BEEA8D18 /* MinSizeRel */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/MinSizeRel;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = s;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
-                            OTHER_CFLAGS = "    -DNDEBUG  ";
-                            OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG  ";
-                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a -framework AGL -framework OpenGL /opt/local/lib/libxerces-c.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_regex-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_program_options-mt.dylib /usr/local/lib/libboost_test_exec_monitor-mt.a /usr/local/lib/libboost_unit_test_framework-mt.dylib /usr/lib/liblapack.dylib /usr/lib/libblas.dylib /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = Mandatory2;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = MinSizeRel;
-              };
-              5743161575C34D5DB2AC1D98 /* RelWithDebInfo */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/RelWithDebInfo;
-                            EXECUTABLE_PREFIX = "";
-                            EXECUTABLE_SUFFIX = "";
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 2;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            LIBRARY_SEARCH_PATHS = "";
-                            OTHER_CFLAGS = "        ";
-                            OTHER_CPLUSPLUSFLAGS = "        ";
-                            OTHER_LDFLAGS = "  -Wl,-search_paths_first -Wl,-headerpad_max_install_names /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a -framework AGL -framework OpenGL /opt/local/lib/libxerces-c.dylib /usr/local/lib/libboost_filesystem-mt.dylib /usr/local/lib/libboost_regex-mt.dylib /usr/local/lib/libboost_serialization-mt.dylib /usr/local/lib/libboost_system-mt.dylib /usr/local/lib/libboost_thread-mt.dylib /usr/local/lib/libboost_program_options-mt.dylib /usr/local/lib/libboost_test_exec_monitor-mt.a /usr/local/lib/libboost_unit_test_framework-mt.dylib /usr/lib/liblapack.dylib /usr/lib/libblas.dylib /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = Mandatory2;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = RelWithDebInfo;
-              };
-              64ACFE5103D640FF81834D90 /* Debug */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ZERO_CHECK;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Debug;
-              };
-              6CF9BD0F9DC84521A3462FCD /* Release */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ZERO_CHECK;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = Release;
-              };
-              3741127A52564D88AA2CCDA8 /* MinSizeRel */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ZERO_CHECK;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = MinSizeRel;
-              };
-              30DA7BBFF9B5436CB44C4414 /* RelWithDebInfo */ = {
-                     isa = XCBuildConfiguration;
-                     buildSettings = {
-                            GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-                            GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-                            GCC_OPTIMIZATION_LEVEL = 0;
-                            GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'", );
-                            GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-                            HEADER_SEARCH_PATHS = ("/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src", /usr/local/include, /opt/local/include, "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP", "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src", );
-                            INSTALL_PATH = "";
-                            OTHER_CFLAGS = "  ";
-                            OTHER_LDFLAGS = "";
-                            OTHER_REZFLAGS = "";
-                            PRODUCT_NAME = ZERO_CHECK;
-                            SECTORDER_FLAGS = "";
-                            SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
-                            USE_HEADERMAP = NO;
-                            WARNING_CFLAGS = ("-Wmost", "-Wno-four-char-constants", "-Wno-unknown-pragmas", );
-                     };
-                     name = RelWithDebInfo;
-              };
+		0B986C6B85C649B3921AB415 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a,
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"/opt/local/lib/libxerces-c.dylib",
+					"/usr/local/lib/libboost_filesystem-mt.dylib",
+					"/usr/local/lib/libboost_regex-mt.dylib",
+					"/usr/local/lib/libboost_serialization-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_program_options-mt.dylib",
+					"/usr/local/lib/libboost_test_exec_monitor-mt.a",
+					"/usr/local/lib/libboost_unit_test_framework-mt.dylib",
+					/usr/lib/liblapack.dylib,
+					/usr/lib/libblas.dylib,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Mandatory2;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		23A17705447846F19ED47199 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
+			};
+			name = MinSizeRel;
+		};
+		30DA7BBFF9B5436CB44C4414 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		3741127A52564D88AA2CCDA8 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		3CF444936AE74931BEEA8D18 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a,
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"/opt/local/lib/libxerces-c.dylib",
+					"/usr/local/lib/libboost_filesystem-mt.dylib",
+					"/usr/local/lib/libboost_regex-mt.dylib",
+					"/usr/local/lib/libboost_serialization-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_program_options-mt.dylib",
+					"/usr/local/lib/libboost_test_exec_monitor-mt.a",
+					"/usr/local/lib/libboost_unit_test_framework-mt.dylib",
+					/usr/lib/liblapack.dylib,
+					/usr/lib/libblas.dylib,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Mandatory2;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		5743161575C34D5DB2AC1D98 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a,
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"/opt/local/lib/libxerces-c.dylib",
+					"/usr/local/lib/libboost_filesystem-mt.dylib",
+					"/usr/local/lib/libboost_regex-mt.dylib",
+					"/usr/local/lib/libboost_serialization-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_program_options-mt.dylib",
+					"/usr/local/lib/libboost_test_exec_monitor-mt.a",
+					"/usr/local/lib/libboost_unit_test_framework-mt.dylib",
+					/usr/lib/liblapack.dylib,
+					/usr/lib/libblas.dylib,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Mandatory2;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		5AA968E582FE4D70A5DD08E9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
+			};
+			name = RelWithDebInfo;
+		};
+		64ACFE5103D640FF81834D90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		69BC8F8EFF4240B6892D383D /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = MinSizeRel;
+		};
+		6CF9BD0F9DC84521A3462FCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		6E88461C5ADF4C0EB1A29B5C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		78A3AA4478A7408DA060AFED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		7C06A9AFA743488AAF79F93B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/bin/Release/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_algorithms.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathplanners.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_pathoptimization.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_simulation.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_opengl.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_task.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_lua_s.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/liblua51.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_proximitystrategies.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libyaobi.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/libpqp.a,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw.a,
+					"-framework",
+					AGL,
+					"-framework",
+					OpenGL,
+					"/opt/local/lib/libxerces-c.dylib",
+					"/usr/local/lib/libboost_filesystem-mt.dylib",
+					"/usr/local/lib/libboost_regex-mt.dylib",
+					"/usr/local/lib/libboost_serialization-mt.dylib",
+					"/usr/local/lib/libboost_system-mt.dylib",
+					"/usr/local/lib/libboost_thread-mt.dylib",
+					"/usr/local/lib/libboost_program_options-mt.dylib",
+					"/usr/local/lib/libboost_test_exec_monitor-mt.a",
+					"/usr/local/lib/libboost_unit_test_framework-mt.dylib",
+					/usr/lib/liblapack.dylib,
+					/usr/lib/libblas.dylib,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../libs/Release/librw_qhull.a,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = Mandatory2;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		AA44420E41CB41E6BF974061 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
+			};
+			name = Debug;
+		};
+		BA1DD6462D0744BE941A3005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../src,
+					/usr/local/include,
+					/opt/local/include,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/yaobi,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/PQP,
+					/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/RobWorkAll/RobWork/cmake/../ext/lua/src,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		BDA899DFCC9345ECB71CFC75 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk;
+				SYMROOT = /Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/build;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-              629300D73E8B4BAA9B873B5F /* Build configuration list for PBXProject  "Mandatory2" */ = {
-                     isa = XCConfigurationList;
-                     buildConfigurations = (
-                            AA44420E41CB41E6BF974061 /* Debug */,
-                            BDA899DFCC9345ECB71CFC75 /* Release */,
-                            23A17705447846F19ED47199 /* MinSizeRel */,
-                            5AA968E582FE4D70A5DD08E9 /* RelWithDebInfo */,
-                     );
-                     defaultConfigurationIsVisible = 0;
-                     defaultConfigurationName = Debug;
-              };
-              449C21D88D9745C187867FE3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
-                     isa = XCConfigurationList;
-                     buildConfigurations = (
-                            78A3AA4478A7408DA060AFED /* Debug */,
-                            BA1DD6462D0744BE941A3005 /* Release */,
-                            69BC8F8EFF4240B6892D383D /* MinSizeRel */,
-                            6E88461C5ADF4C0EB1A29B5C /* RelWithDebInfo */,
-                     );
-                     defaultConfigurationIsVisible = 0;
-                     defaultConfigurationName = Debug;
-              };
-              2E2666B22D8F4ECEB6638C29 /* Build configuration list for PBXNativeTarget "Mandatory2" */ = {
-                     isa = XCConfigurationList;
-                     buildConfigurations = (
-                            0B986C6B85C649B3921AB415 /* Debug */,
-                            7C06A9AFA743488AAF79F93B /* Release */,
-                            3CF444936AE74931BEEA8D18 /* MinSizeRel */,
-                            5743161575C34D5DB2AC1D98 /* RelWithDebInfo */,
-                     );
-                     defaultConfigurationIsVisible = 0;
-                     defaultConfigurationName = Debug;
-              };
-              1C5147607D514913AC5E17CF /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
-                     isa = XCConfigurationList;
-                     buildConfigurations = (
-                            64ACFE5103D640FF81834D90 /* Debug */,
-                            6CF9BD0F9DC84521A3462FCD /* Release */,
-                            3741127A52564D88AA2CCDA8 /* MinSizeRel */,
-                            30DA7BBFF9B5436CB44C4414 /* RelWithDebInfo */,
-                     );
-                     defaultConfigurationIsVisible = 0;
-                     defaultConfigurationName = Debug;
-              };
+		1C5147607D514913AC5E17CF /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64ACFE5103D640FF81834D90 /* Debug */,
+				6CF9BD0F9DC84521A3462FCD /* Release */,
+				3741127A52564D88AA2CCDA8 /* MinSizeRel */,
+				30DA7BBFF9B5436CB44C4414 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		2E2666B22D8F4ECEB6638C29 /* Build configuration list for PBXNativeTarget "Mandatory2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0B986C6B85C649B3921AB415 /* Debug */,
+				7C06A9AFA743488AAF79F93B /* Release */,
+				3CF444936AE74931BEEA8D18 /* MinSizeRel */,
+				5743161575C34D5DB2AC1D98 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		449C21D88D9745C187867FE3 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78A3AA4478A7408DA060AFED /* Debug */,
+				BA1DD6462D0744BE941A3005 /* Release */,
+				69BC8F8EFF4240B6892D383D /* MinSizeRel */,
+				6E88461C5ADF4C0EB1A29B5C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		629300D73E8B4BAA9B873B5F /* Build configuration list for PBXProject "Mandatory2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA44420E41CB41E6BF974061 /* Debug */,
+				BDA899DFCC9345ECB71CFC75 /* Release */,
+				23A17705447846F19ED47199 /* MinSizeRel */,
+				5AA968E582FE4D70A5DD08E9 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
-       };
-       rootObject = 06A4772CBC3549A0B04F0FB3;
+	};
+	rootObject = 06A4772CBC3549A0B04F0FB3 /* Project object */;
 }
