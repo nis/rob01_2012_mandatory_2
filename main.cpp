@@ -26,7 +26,17 @@ int main(int argc, char** argv) {
         return 1;
 	}
     
+    ass_i();
+    
 	cout << "Program done." << endl;
 	return 0;
 }
 
+void ass_i() {
+    cout << "Running assignment i." << endl;
+    // Set Q's
+    Q qa(6, 0.0, -(Pi/2.0), Pi/2.0, 0.0, -0.1745, 0.0);
+    Q qb(6, 0.0, -(Pi/4.0), Pi/8.0, 0.0, 1.0, 0.0);
+    Q qc(6, 0.65, -1.0, 1.0, 0.1, -0.1745, 0.1);
+    cout << "Finished running assignment i." << endl;
+}
