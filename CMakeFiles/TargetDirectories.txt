@@ -1,0 +1,3 @@
+/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeFiles/ALL_BUILD.dir
+/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeFiles/Mandatory2.dir
+/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/Code/CMakeFiles/ZERO_CHECK.dir
