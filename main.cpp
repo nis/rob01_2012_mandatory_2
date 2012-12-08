@@ -46,6 +46,7 @@ int main(int argc, char** argv) {
 }
 
 void ass_i() {
+    cout << "------------------------------------------------------------------------" << endl;
     cout << "Running assignment i." << endl << endl;
     // Set Q's
     Q qa(6, 0.0, -Pi/2.0, Pi/2.0, 0.0, -0.1745, 0.0);
@@ -74,6 +75,7 @@ void ass_i() {
     cout << endl;
     
     cout << "Finished running assignment i." << endl;
+    cout << "------------------------------------------------------------------------" << endl;
 }
 
 void print_xyzrpy(Transform3D<>& transform) {
