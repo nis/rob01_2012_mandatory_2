@@ -10,16 +10,25 @@ using namespace rw::models;
 using namespace rw::kinematics;
 
 void ass_i();
-void ass_ii(vector<Transform3D<> >& t_world_desired, vector<Transform3D<> >& t_desired);
+void ass_ii();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
-void import_transforms_from_file(string file, vector<Transform3D<> >& result);
+void import_transforms_from_file(string file);
 
+// Struct to hold the individual steps
+struct Step {
+    double time;
+    Transform3D<> t_world_desired;
+    Transform3D<> t_desired;
+};
+
+// Global data
 WorkCell::Ptr wc;
 Device::Ptr device;
 Frame* tool;
 State start_state;
+vector<Step> steps;
 
 // Defines:
 #define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
@@ -56,12 +65,10 @@ int main(int argc, char** argv) {
     ass_i();
     
     // Import the transforms from the data file
-    vector<Transform3D<> > t_world_desired;
-    import_transforms_from_file(TRANSFORM_FILE, t_world_desired);
+    import_transforms_from_file(TRANSFORM_FILE);
     
     // Calculate the desired transfrom relative to the base
-    vector<Transform3D<> > t_desired;
-    ass_ii(t_world_desired, t_desired);
+    ass_ii();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -102,18 +109,16 @@ void ass_i() {
 
 // Only position part needs modyfying.
 // Add the position part of the transform from world >> base to each position part in t_worl_desired
-void ass_ii(vector<Transform3D<> >& t_world_desired, vector<Transform3D<> >& t_desired) {
+void ass_ii() {
     Transform3D<> world_to_base = device->worldTbase(start_state);
     
-    for (int i = 0; i < t_world_desired.size(); i++) {
-        t_desired.push_back(t_world_desired[i]);
-        t_desired[i].P() = t_desired[i].P() + world_to_base.P();
+    for (int i = 0; i < steps.size(); i++) {
+        steps[i].t_desired = steps[i].t_world_desired;
+        steps[i].t_desired.P() = steps[i].t_desired.P() + world_to_base.P();
     }
 }
 
-void import_transforms_from_file(string file, vector<Transform3D<> >& result) {
-    result.erase(result.begin(), result.end());
-    
+void import_transforms_from_file(string file) {
     ifstream infile(file.c_str());
     string line;
     Vector3D<> p(0.0, 0.0, 0.0);
@@ -146,7 +151,9 @@ void import_transforms_from_file(string file, vector<Transform3D<> >& result) {
                 ss >> p(2);
                 
                 Transform3D<> t(p, r);
-                result.push_back(t);
+                Step step;
+                step.t_world_desired = t;
+                steps.push_back(step);
                 count++;
             }
         }
