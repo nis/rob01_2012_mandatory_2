@@ -11,6 +11,7 @@ using namespace rw::kinematics;
 
 void ass_i();
 void ass_ii();
+void ass_iii();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -35,6 +36,7 @@ vector<Step> steps;
 #define DEVICE_NAME "KukaKr120"
 #define TOOL_FRAME "ENDMILL4"
 #define TRANSFORM_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/transforms_v4.dat"
+#define V_MILLING 0.05
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -69,6 +71,9 @@ int main(int argc, char** argv) {
     
     // Calculate the desired transfrom relative to the base
     ass_ii();
+    
+    // Calculate the time for each step
+    ass_iii();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -125,7 +130,22 @@ void ass_ii() {
     cout << "Finished running assignment II." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
+
+
+void ass_iii() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment III." << endl << endl;
+    steps[1].time = 0.0;
+    
+    for (int i = 2; i < steps.size(); i++) {
+        steps[i].time = ((steps[i].t_desired.P() - steps[i - 1].t_desired.P()).norm2() / V_MILLING) + steps[i - 1].time;
     }
+    
+    cout << "t2: \t" << steps[2].time << "s." << endl;
+    cout << "t10: \t" << steps[10].time << "s." << endl;
+    
+    cout << "Finished running assignment III." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
 void import_transforms_from_file(string file) {
