@@ -18,6 +18,7 @@ void import_transforms_from_file(string file, vector<Transform3D<> >& result);
 WorkCell::Ptr wc;
 Device::Ptr device;
 Frame* tool;
+State start_state;
 
 // Defines:
 #define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
@@ -39,6 +40,9 @@ int main(int argc, char** argv) {
 		cout << "Device: " << deviceName << " not found!" << endl;
         return 1;
 	}
+    
+    // Save the starting state
+    start_state = wc->getDefaultState();
     
     string toolFramName = TOOL_FRAME;
     cout << "Finding frame for tool: " << toolFramName << "." << endl;
