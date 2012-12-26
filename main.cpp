@@ -116,7 +116,7 @@ void ass_ii() {
     
     int count = 0;
     
-    for (int i = 0; i < steps.size(); i++) {
+    for (int i = 1; i < steps.size(); i++) {
         steps[i].t_desired = steps[i].t_world_desired;
         steps[i].t_desired.P() = steps[i].t_desired.P() - world_to_base.P();
         count++;
@@ -136,6 +136,8 @@ void import_transforms_from_file(string file) {
     
     int count = 0;
     
+    Step step;
+    steps.push_back(step);
     
     if (!infile) {
         cout << "Transforms file not found!" << endl;
