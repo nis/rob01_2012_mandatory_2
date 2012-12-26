@@ -76,7 +76,7 @@ int main(int argc, char** argv) {
 
 void ass_i() {
     cout << "------------------------------------------------------------------------" << endl;
-    cout << "Running assignment i." << endl << endl;
+    cout << "Running assignment I." << endl << endl;
     // Set Q's
     Q qa(6, 0.0, -Pi/2.0, Pi/2.0, 0.0, -0.1745, 0.0);
     Q qb(6, 0.0, -(Pi/4.0), Pi/8.0, 0.0, 1.0, 0.0);
@@ -103,18 +103,28 @@ void ass_i() {
     print_xyzrpy(current_transform);
     cout << endl;
     
-    cout << "Finished running assignment i." << endl;
-    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Finished running assignment I." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
 // Only position part needs modyfying.
 // Add the position part of the transform from world >> base to each position part in t_worl_desired
 void ass_ii() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment II." << endl << endl;
     Transform3D<> world_to_base = device->worldTbase(start_state);
+    
+    int count = 0;
     
     for (int i = 0; i < steps.size(); i++) {
         steps[i].t_desired = steps[i].t_world_desired;
         steps[i].t_desired.P() = steps[i].t_desired.P() + world_to_base.P();
+        count++;
+    }
+    cout << count << " transforms shifted to base." << endl;
+    cout << "Finished running assignment II." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
     }
 }
 
@@ -130,8 +140,6 @@ void import_transforms_from_file(string file) {
     if (!infile) {
         cout << "Transforms file not found!" << endl;
     } else {
-        cout << "Importing transforms." << endl;
-        
         while (!infile.eof()) {
             getline( infile , line );
             if ( line != "") {
@@ -158,8 +166,6 @@ void import_transforms_from_file(string file) {
             }
         }
     }
-    
-    cout << count << " transforms imported." << endl;
 }
 
 void print_xyzrpy(Transform3D<>& transform) {
