@@ -1,4 +1,6 @@
 #include <iostream>
+#include <fstream>
+#include <sstream>
 #include <rw/rw.hpp>
 
 using namespace std;
@@ -11,6 +13,7 @@ void ass_i();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
+void import_transforms_from_file(string file, vector<Transform3D<> >& result);
 
 WorkCell::Ptr wc;
 Device::Ptr device;
@@ -47,6 +50,10 @@ int main(int argc, char** argv) {
     
     ass_i();
     
+    // Import the transforms from the data file
+    vector<Transform3D<> > transforms;
+    import_transforms_from_file(TRANSFORM_FILE, transforms);
+    
 	cout << "Program done." << endl;
 	return 0;
 }
@@ -82,6 +89,50 @@ void ass_i() {
     
     cout << "Finished running assignment i." << endl;
     cout << "------------------------------------------------------------------------" << endl;
+}
+
+void import_transforms_from_file(string file, vector<Transform3D<> >& result) {
+    result.erase(result.begin(), result.end());
+    
+    ifstream infile(file.c_str());
+    string line;
+    Vector3D<> p(0.0, 0.0, 0.0);
+    Rotation3D<> r(0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+    
+    int count = 0;
+    
+    
+    if (!infile) {
+        cout << "Transforms file not found!" << endl;
+    } else {
+        cout << "Importing transforms." << endl;
+        
+        while (!infile.eof()) {
+            getline( infile , line );
+            if ( line != "") {
+                stringstream ss (stringstream::in | stringstream::out);
+                ss << line;
+                ss >> r(0, 0);
+                ss >> r(0, 1);
+                ss >> r(0, 2);
+                ss >> p(0);
+                ss >> r(1, 0);
+                ss >> r(1, 1);
+                ss >> r(1, 2);
+                ss >> p(1);
+                ss >> r(2, 0);
+                ss >> r(2, 1);
+                ss >> r(2, 2);
+                ss >> p(2);
+                
+                Transform3D<> t(p, r);
+                result.push_back(t);
+                count++;
+            }
+        }
+    }
+    
+    cout << count << " transforms imported." << endl;
 }
 
 void print_xyzrpy(Transform3D<>& transform) {
