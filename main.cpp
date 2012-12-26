@@ -16,14 +16,20 @@ WorkCell::Ptr wc;
 Device::Ptr device;
 Frame* tool;
 
+// Defines:
+#define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
+#define DEVICE_NAME "KukaKr120"
+#define TOOL_FRAME "ENDMILL4"
+#define TRANSFORM_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/transforms_v4.dat"
+
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
     
     cout << "Loading scene." << endl;
-    string wcFile = "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml";
+    string wcFile = SCENE_FILE;
     wc = WorkCellLoader::load(wcFile);
     
-    string deviceName = "KukaKr120";
+    string deviceName = DEVICE_NAME;
     cout << "Finding device: " << deviceName << "." << endl;
     device = wc->findDevice(deviceName);
     if (device == NULL) {
@@ -31,7 +37,7 @@ int main(int argc, char** argv) {
         return 1;
 	}
     
-    string toolFramName = "ENDMILL4";
+    string toolFramName = TOOL_FRAME;
     cout << "Finding frame for tool: " << toolFramName << "." << endl;
     tool = wc->findFrame(toolFramName);
     if (tool == NULL) {
