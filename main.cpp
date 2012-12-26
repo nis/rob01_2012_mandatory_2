@@ -51,8 +51,8 @@ int main(int argc, char** argv) {
     ass_i();
     
     // Import the transforms from the data file
-    vector<Transform3D<> > transforms;
-    import_transforms_from_file(TRANSFORM_FILE, transforms);
+    vector<Transform3D<> > t_world_desired;
+    import_transforms_from_file(TRANSFORM_FILE, t_world_desired);
     
 	cout << "Program done." << endl;
 	return 0;
