@@ -118,7 +118,7 @@ void ass_ii() {
     
     for (int i = 0; i < steps.size(); i++) {
         steps[i].t_desired = steps[i].t_world_desired;
-        steps[i].t_desired.P() = steps[i].t_desired.P() + world_to_base.P();
+        steps[i].t_desired.P() = steps[i].t_desired.P() - world_to_base.P();
         count++;
     }
     cout << count << " transforms shifted to base." << endl;
