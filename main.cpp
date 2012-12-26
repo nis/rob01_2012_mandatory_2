@@ -10,6 +10,7 @@ using namespace rw::models;
 using namespace rw::kinematics;
 
 void ass_i();
+void ass_ii(vector<Transform3D<> >& t_world_desired, vector<Transform3D<> >& t_desired);
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -58,6 +59,10 @@ int main(int argc, char** argv) {
     vector<Transform3D<> > t_world_desired;
     import_transforms_from_file(TRANSFORM_FILE, t_world_desired);
     
+    // Calculate the desired transfrom relative to the base
+    vector<Transform3D<> > t_desired;
+    ass_ii(t_world_desired, t_desired);
+    
 	cout << "Program done." << endl;
 	return 0;
 }
@@ -93,6 +98,17 @@ void ass_i() {
     
     cout << "Finished running assignment i." << endl;
     cout << "------------------------------------------------------------------------" << endl;
+}
+
+// Only position part needs modyfying.
+// Add the position part of the transform from world >> base to each position part in t_worl_desired
+void ass_ii(vector<Transform3D<> >& t_world_desired, vector<Transform3D<> >& t_desired) {
+    Transform3D<> world_to_base = device->worldTbase(start_state);
+    
+    for (int i = 0; i < t_world_desired.size(); i++) {
+        t_desired.push_back(t_world_desired[i]);
+        t_desired[i].P() = t_desired[i].P() + world_to_base.P();
+    }
 }
 
 void import_transforms_from_file(string file, vector<Transform3D<> >& result) {
