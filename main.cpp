@@ -9,20 +9,26 @@ using namespace rw::loaders;
 using namespace rw::models;
 using namespace rw::kinematics;
 
-void ass_i();
-void ass_ii();
-void ass_iii();
-
-// Utility functions
-void print_xyzrpy(Transform3D<>& transform);
-void import_transforms_from_file(string file);
-
 // Struct to hold the individual steps
 struct Step {
     double time;
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
 };
+
+void ass_i();
+void ass_ii();
+void ass_iii();
+void ass_iv();
+
+// Utility functions
+void print_xyzrpy(Transform3D<>& transform);
+void import_transforms_from_file(string file);
+Transform3D<> linear_interpolate(Step& from, Step& to, double t);
+template <typename T> int sgn(T val);
+Vector3D<> w_of_rot(Rotation3D<>& r);
+Rotation3D<> reaa(Vector3D<>& v, double& theta);
+Rotation3D<> reaa(Vector3D<>& x);
 
 // Global data
 WorkCell::Ptr wc;
@@ -74,6 +80,9 @@ int main(int argc, char** argv) {
     
     // Calculate the time for each step
     ass_iii();
+    
+    // Show linear interpolation
+    ass_iv();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -146,6 +155,103 @@ void ass_iii() {
     
     cout << "Finished running assignment III." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+
+void ass_iv() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment IV." << endl << endl;
+    
+    cout << "First transform:" << endl;
+    Transform3D<> t = linear_interpolate(steps[1], steps[2], steps[2].time/2.0);
+    cout << t << endl;
+    
+    cout << "Second transform:" << endl;
+    t = linear_interpolate(steps[9], steps[10], (steps[9].time/3.0)+((2.0 * steps[10].time)/3.0));
+    cout << t << endl;
+    
+    cout << "Finished running assignment IV." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+Transform3D<> linear_interpolate(Step& from, Step& to, double t) {
+    Transform3D<> result;
+    
+    // P-part
+    Vector3D<> p;
+    double time = ((t - from.time)/(to.time - from.time));
+    p = from.t_desired.P() +  time * (to.t_desired.P() - from.t_desired.P());
+    
+    // R-part
+    Rotation3D<> wrot = inverse(from.t_desired.R()) * to.t_desired.R();
+    Vector3D<> x = w_of_rot(wrot);
+    Vector3D<> tx = time * x;
+    Rotation3D<> r = from.t_desired.R() * reaa(tx);
+    
+    result.P() = p;
+    result.R() = r;
+    return result;
+}
+
+Rotation3D<> reaa(Vector3D<>& x) {
+    double theta = x.norm2();
+    Vector3D<> v = x / theta;
+    return reaa(v, theta);
+}
+
+Rotation3D<> reaa(Vector3D<>& v, double& theta) {
+    Rotation3D<> result;
+    result(0, 0) = pow(v[0], 2.0) * (1 - cos(theta)) + cos(theta);
+    result(0, 1) = v[0] * v[1] * (1 - cos(theta)) - v[2] * sin(theta);
+    result(0, 2) = v[0] * v[2] * (1 - cos(theta)) + v[1] * sin(theta);
+    result(1, 0) = v[0] * v[1] * (1 - cos(theta)) + v[2] * sin(theta);
+    result(1, 1) = pow(v[1], 2.0) * (1 - cos(theta)) + cos(theta);
+    result(1, 2) = v[1] * v[2] * (1 - cos(theta)) - v[0] * sin(theta);
+    result(2, 0) = v[0] * v[2] * (1 - cos(theta)) - v[1] * sin(theta);
+    result(2, 1) = v[1] * v[2] * (1 - cos(theta)) + v[0] * sin(theta);
+    result(2, 2) = pow(v[2], 2.0) * (1 - cos(theta)) + cos(theta);
+    
+    return result;
+}
+
+template <typename T> int sgn(T val) {
+    return (T(0) < val) - (val < T(0));
+}
+
+Vector3D<> w_of_rot(Rotation3D<>& r) {
+    // Check which formular we should use
+    Vector3D<> to_norm(r(2,1)-r(1,2), r(0,2)-r(2,0), r(1,0)-r(0,1));
+    double norm = to_norm.norm2();
+    double x = 0.5 * norm;
+    
+    Vector3D<> result;
+    
+    if (x <= 1/1000000) {
+        // eq 4.18
+        result(0) = r(2,1) - r(1,2);
+        result(1) = r(0,2) - r(2,0);
+        result(2) = r(1,0) - r(0,1);
+        result = result * 0.5;
+    } else if (Pi - x <= 1/1000000) {
+        // eq 4.19
+        int a1 = sgn(r(2,1) - r(1,2));
+        int a2 = sgn(r(0,2) - r(2,0));
+        int a3 = sgn(r(1,0) - r(0,1));
+        
+        result(0) = (double)a1 * sqrt(1 + r(0, 0));
+        result(1) = (double)a2 * sqrt(1 + r(1, 1));
+        result(2) = (double)a3 * sqrt(1 + r(2, 2));
+        
+        result = ((2.0 * Pi - norm) / (2.0 * sqrt(3.0 + r(0, 0) + r(1, 1) + r(2, 2)))) * result;
+    } else {
+        // eq 4.17
+        result(0) = r(2,1) - r(1,2);
+        result(1) = r(0,2) - r(2,0);
+        result(2) = r(1,0) - r(0,1);
+        
+        result = ((acos((r(0, 0) + r(1, 1) + r(2, 2) - 1) / 2)) / norm) * result;
+    }
+    return result;
 }
 
 void import_transforms_from_file(string file) {
