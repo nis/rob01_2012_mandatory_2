@@ -14,6 +14,7 @@ struct Step {
     double time;
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
+    vector<Step> linear_interpolated_steps;
 };
 
 void ass_i();
@@ -43,6 +44,7 @@ vector<Step> steps;
 #define TOOL_FRAME "ENDMILL4"
 #define TRANSFORM_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/transforms_v4.dat"
 #define V_MILLING 0.05
+#define LINIEAR_INTERPOLATION_STEPS 10
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -161,6 +163,20 @@ void ass_iii() {
 void ass_iv() {
     cout << "------------------------------------------------------------------------" << endl;
     cout << "Running assignment IV." << endl << endl;
+    
+    cout << "Splitting each step up into " << LINIEAR_INTERPOLATION_STEPS << " steps." << endl;
+    for (int i = 1; i < steps.size() - 1; i++) {
+        double time_inc = (steps[i + 1].time - steps[i].time) / LINIEAR_INTERPOLATION_STEPS;
+        Step s;
+        s.t_desired = steps[i].t_desired;
+        steps[i].linear_interpolated_steps.push_back(s);
+        for (int j = 1; j < LINIEAR_INTERPOLATION_STEPS; j++) {
+            Transform3D<> t = linear_interpolate(steps[i], steps[i + 1], steps[i].time + ((double)j * time_inc));
+            s.t_desired = t;
+            steps[i].linear_interpolated_steps.push_back(s);
+        }
+    }
+    cout << "Done splitting." << endl << endl;
     
     cout << "First transform:" << endl;
     Transform3D<> t = linear_interpolate(steps[1], steps[2], steps[2].time/2.0);
