@@ -14,13 +14,12 @@ struct Step {
     double time;
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
-    vector<Step> linear_interpolated_steps;
 };
 
 void ass_i();
 void ass_ii();
 void ass_iii();
-void ass_iv();
+void ass_iv(vector<Step>& isteps);
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -83,8 +82,9 @@ int main(int argc, char** argv) {
     // Calculate the time for each step
     ass_iii();
     
-    // Show linear interpolation
-    ass_iv();
+    // Compute linear interpolation
+    vector<Step> linear_interpolated_steps; // For saving the interpolated steps
+    ass_iv(linear_interpolated_steps);
     
 	cout << "Program done." << endl;
 	return 0;
@@ -160,7 +160,7 @@ void ass_iii() {
 }
 
 
-void ass_iv() {
+void ass_iv(vector<Step>& isteps) {
     cout << "------------------------------------------------------------------------" << endl;
     cout << "Running assignment IV." << endl << endl;
     
@@ -169,14 +169,16 @@ void ass_iv() {
         double time_inc = (steps[i + 1].time - steps[i].time) / LINIEAR_INTERPOLATION_STEPS;
         Step s;
         s.t_desired = steps[i].t_desired;
-        steps[i].linear_interpolated_steps.push_back(s);
+        s.time = steps[i].time;
+        isteps.push_back(s);
         for (int j = 1; j < LINIEAR_INTERPOLATION_STEPS; j++) {
             Transform3D<> t = linear_interpolate(steps[i], steps[i + 1], steps[i].time + ((double)j * time_inc));
             s.t_desired = t;
-            steps[i].linear_interpolated_steps.push_back(s);
+            s.time = steps[i].time + ((double)j * time_inc);
+            isteps.push_back(s);
         }
     }
-    cout << "Done splitting." << endl << endl;
+    cout << "Done splitting. " << isteps.size() << " interpolated steps created." << endl << endl;
     
     cout << "First transform:" << endl;
     Transform3D<> t = linear_interpolate(steps[1], steps[2], steps[2].time/2.0);
