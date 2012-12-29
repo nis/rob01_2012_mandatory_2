@@ -16,6 +16,7 @@ struct Step {
     Transform3D<> t_desired;
     Q linear_interpolated_joint_configuration;
     double delta;
+    Vector3D<> positinal_velocity;
 };
 
 void ass_i();
@@ -23,6 +24,7 @@ void ass_ii();
 void ass_iii();
 void ass_iv(vector<Step>& isteps);
 void ass_v(vector<Step>& isteps);
+void ass_vi();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -93,6 +95,9 @@ int main(int argc, char** argv) {
     
     // Use algoritm 3 to get the joint configurations
 //    ass_v(linear_interpolated_steps);
+    
+    // Computer Positional velocities
+    ass_vi();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -258,6 +263,25 @@ void ass_v(vector<Step>& isteps) {
     cout << "Q(10) \t" << steps[10].linear_interpolated_joint_configuration << endl;
     
     cout << "Finished running assignment V." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_vi() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment VI." << endl << endl;
+    
+    cout << "Computing positional velocities." << endl;
+    
+    int number_of_steps = steps.size() - 1;
+    for (int i = 1; i < number_of_steps; i++) {
+        steps[i].positinal_velocity = (steps[i + 1].t_desired.P() - steps[i].t_desired.P()) / (steps[i + 1].time - steps[i].time);
+    }
+    
+    cout << "Results:" << endl;
+    cout << "v(1,2)  \t" << steps[1].positinal_velocity << endl;
+    cout << "v(9,10) \t" << steps[9].positinal_velocity << endl;
+    
+    cout << "Finished running assignment VI." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
