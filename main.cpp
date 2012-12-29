@@ -16,9 +16,9 @@ struct Step {
     Transform3D<> t_desired;
     Q linear_interpolated_joint_configuration;
     double delta;
-    Vector3D<> positinal_velocity_to_next;
+    Vector3D<> positional_velocity_to_next;
     Vector3D<> angular_velocity_to_next;
-    Vector3D<> positinal_velocity;
+    Vector3D<> positional_velocity;
     Vector3D<> angular_velocity;
 };
 
@@ -289,12 +289,12 @@ void ass_vi() {
     
     int number_of_steps = steps.size() - 1;
     for (int i = 1; i < number_of_steps; i++) {
-        steps[i].positinal_velocity_to_next = (steps[i + 1].t_desired.P() - steps[i].t_desired.P()) / (steps[i + 1].time - steps[i].time);
+        steps[i].positional_velocity_to_next = (steps[i + 1].t_desired.P() - steps[i].t_desired.P()) / (steps[i + 1].time - steps[i].time);
     }
     
     cout << "Results:" << endl;
-    cout << "v(1,2)  \t" << steps[1].positinal_velocity_to_next << endl;
-    cout << "v(9,10) \t" << steps[9].positinal_velocity_to_next << endl;
+    cout << "v(1,2)  \t" << steps[1].positional_velocity_to_next << endl;
+    cout << "v(9,10) \t" << steps[9].positional_velocity_to_next << endl;
     
     cout << "Finished running assignment VI." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
@@ -327,17 +327,17 @@ void ass_viii() {
     
     cout << "Correcting positional velocities." << endl;
     
-    steps[1].positinal_velocity = steps[1].positinal_velocity_to_next;
-    steps.back().positinal_velocity = steps.back().positinal_velocity_to_next;
+    steps[1].positional_velocity = steps[1].positional_velocity_to_next;
+    steps.back().positional_velocity = steps.back().positional_velocity_to_next;
     
     int number_of_steps = steps.size() - 1;
     for (int i = 2; i < number_of_steps; i++) {
-        steps[i].positinal_velocity = (steps[i].positinal_velocity_to_next + steps[i - 1].positinal_velocity_to_next) / 2.0;
+        steps[i].positional_velocity = (steps[i].positional_velocity_to_next + steps[i - 1].positional_velocity_to_next) / 2.0;
     }
     
     cout << "Results:" << endl;
-    cout << "v(2)  \t" << steps[2].positinal_velocity << endl;
-    cout << "v(10) \t" << steps[10].positinal_velocity << endl;
+    cout << "v(2)  \t" << steps[2].positional_velocity << endl;
+    cout << "v(10) \t" << steps[10].positional_velocity << endl;
     
     cout << "Finished running assignment VIII." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
