@@ -14,12 +14,15 @@ struct Step {
     double time;
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
+    Q linear_interpolated_joint_configuration;
+    double delta;
 };
 
 void ass_i();
 void ass_ii();
 void ass_iii();
 void ass_iv(vector<Step>& isteps);
+void ass_v(vector<Step>& isteps);
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -29,6 +32,7 @@ template <typename T> int sgn(T val);
 Vector3D<> w_of_rot(Rotation3D<>& r);
 Rotation3D<> reaa(Vector3D<>& v, double& theta);
 Rotation3D<> reaa(Vector3D<>& x);
+void calculate_delta_u(Transform3D<>& tq, Transform3D<>& td, VelocityScrew6D<double>& deltau);
 
 // Global data
 WorkCell::Ptr wc;
@@ -43,7 +47,8 @@ vector<Step> steps;
 #define TOOL_FRAME "ENDMILL4"
 #define TRANSFORM_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/transforms_v4.dat"
 #define V_MILLING 0.05
-#define LINIEAR_INTERPOLATION_STEPS 10
+#define LINIEAR_INTERPOLATION_STEPS 26
+#define WORKSPACE_SIZE 2.8
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -85,6 +90,9 @@ int main(int argc, char** argv) {
     // Compute linear interpolation
     vector<Step> linear_interpolated_steps; // For saving the interpolated steps
     ass_iv(linear_interpolated_steps);
+    
+    // Use algoritm 3 to get the joint configurations
+    ass_v(linear_interpolated_steps);
     
 	cout << "Program done." << endl;
 	return 0;
@@ -189,6 +197,61 @@ void ass_iv(vector<Step>& isteps) {
     cout << t << endl;
     
     cout << "Finished running assignment IV." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_v(vector<Step>& isteps) {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment V." << endl << endl;
+    
+    // Start configuration
+    Q q(6, 0.158, -1.18, 1.526, 1.48, -0.522, -1.256);
+    
+    cout << "Calcualting the deltas." << endl;
+    
+    // Computing deltas
+    isteps[0].linear_interpolated_joint_configuration = q;
+    for (int i = 1; i < isteps.size(); i++) {
+        Rotation3D<> wrot2 = inverse(isteps[i - 1].t_desired.R()) * isteps[i].t_desired.R();
+        isteps[i].delta = ((isteps[i].t_desired.P() - isteps[i - 1].t_desired.P()).norm2() / WORKSPACE_SIZE) + (w_of_rot(wrot2).norm2() / Pi);
+        if (isteps[i].delta > 0.01) {
+            cout << "Delta too large!" << endl;
+        }
+    }
+    
+    // Computing joint configuration
+    cout << "Computing joint configuration." << endl;
+    State state = start_state;
+    device->setQ(q, state);
+    VelocityScrew6D<double> deltau;
+    double epsilon = 0.0000001;
+    for (int i = 1; i < isteps.size(); i++) {
+        calculate_delta_u(isteps[i - 1].t_desired, isteps[i].t_desired, deltau);
+        while (deltau.norm2() > epsilon) {
+            Q dq(prod(LinearAlgebra::inverse(device->baseJframe(tool, state).m()), deltau.m()));
+            q = q + dq;
+            device->setQ(q, state);
+            Transform3D<> tnew = device->baseTframe(tool, state);
+            calculate_delta_u(tnew, isteps[i].t_desired, deltau);
+        }
+        isteps[i].linear_interpolated_joint_configuration = q;
+    }
+    
+    // Match configurations from the linear interpolated big list to the small list
+    cout << "Mapping joint configurations to the smaller list of steps." << endl;
+    int small_list_index = 1;
+    for (int i = 0; i < isteps.size(); i++) {
+        if (isteps[i].time == steps[small_list_index].time) {
+            steps[small_list_index].linear_interpolated_joint_configuration = isteps[i].linear_interpolated_joint_configuration;
+            small_list_index++;
+        }
+    }
+    
+    cout << "Results:" << endl;
+    cout << "Q(2) \t" << steps[2].linear_interpolated_joint_configuration << endl;
+    cout << "Q(10) \t" << steps[10].linear_interpolated_joint_configuration << endl;
+    
+    cout << "Finished running assignment V." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
@@ -320,4 +383,17 @@ void print_xyzrpy(Transform3D<>& transform) {
     cout << transform.P()[0] << ", " << transform.P()[1] << ", " << transform.P()[2];
     
     cout << "}" << endl;
+}
+
+void calculate_delta_u(Transform3D<>& tq, Transform3D<>& td, VelocityScrew6D<double>& deltau) {
+	Rotation3D<> tempR = td.R() * inverse(tq.R());
+
+    deltau = VelocityScrew6D<double>(
+                                     td.P()[0] - tq.P()[0],
+                                     td.P()[1] - tq.P()[1],
+                                     td.P()[2] - tq.P()[2],
+                                     0.5 * (tempR(2, 1) - tempR(1, 2)),
+                                     0.5 * (tempR(0, 2) - tempR(2, 0)),
+                                     0.5 * (tempR(1, 0) - tempR(0, 1))
+                                     );
 }
