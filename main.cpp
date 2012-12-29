@@ -88,11 +88,11 @@ int main(int argc, char** argv) {
     ass_iii();
     
     // Compute linear interpolation
-    vector<Step> linear_interpolated_steps; // For saving the interpolated steps
-    ass_iv(linear_interpolated_steps);
+//    vector<Step> linear_interpolated_steps; // For saving the interpolated steps
+//    ass_iv(linear_interpolated_steps);
     
     // Use algoritm 3 to get the joint configurations
-    ass_v(linear_interpolated_steps);
+//    ass_v(linear_interpolated_steps);
     
 	cout << "Program done." << endl;
 	return 0;
