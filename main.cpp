@@ -17,6 +17,7 @@ struct Step {
     Q linear_interpolated_joint_configuration;
     double delta;
     Vector3D<> positinal_velocity_to_next;
+    Vector3D<> angular_velocity_to_next;
 };
 
 void ass_i();
@@ -25,6 +26,7 @@ void ass_iii();
 void ass_iv(vector<Step>& isteps);
 void ass_v(vector<Step>& isteps);
 void ass_vi();
+void ass_vii();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -98,6 +100,9 @@ int main(int argc, char** argv) {
     
     // Computer Positional velocities
     ass_vi();
+    
+    // Computer Angular velocities
+    ass_vii();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -282,6 +287,27 @@ void ass_vi() {
     cout << "v(9,10) \t" << steps[9].positinal_velocity_to_next << endl;
     
     cout << "Finished running assignment VI." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_vii() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment VII." << endl << endl;
+    
+    cout << "Computing angular velocities." << endl;
+    
+    int number_of_steps = steps.size() - 1;
+    for (int i = 1; i < number_of_steps; i++) {
+        Rotation3D<> wrot = steps[i].t_desired.R().inverse() * steps[i + 1].t_desired.R();
+        Vector3D<> wrotted = w_of_rot(wrot);
+        steps[i].angular_velocity_to_next = (1.0 / (steps[i + 1].time - steps[i].time)) * wrotted;
+    }
+    
+    cout << "Results:" << endl;
+    cout << "w(1,2)  \t" << steps[1].angular_velocity_to_next << endl;
+    cout << "w(9,10) \t" << steps[9].angular_velocity_to_next << endl;
+    
+    cout << "Finished running assignment VII." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
