@@ -18,6 +18,8 @@ struct Step {
     double delta;
     Vector3D<> positinal_velocity_to_next;
     Vector3D<> angular_velocity_to_next;
+    Vector3D<> positinal_velocity;
+    Vector3D<> angular_velocity;
 };
 
 void ass_i();
@@ -27,6 +29,8 @@ void ass_iv(vector<Step>& isteps);
 void ass_v(vector<Step>& isteps);
 void ass_vi();
 void ass_vii();
+void ass_viii();
+void ass_ix();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -103,6 +107,12 @@ int main(int argc, char** argv) {
     
     // Computer Angular velocities
     ass_vii();
+    
+    // Correct Positional velocities
+    ass_viii();
+    
+    // Correct Angular velocities
+    ass_ix();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -308,6 +318,50 @@ void ass_vii() {
     cout << "w(9,10) \t" << steps[9].angular_velocity_to_next << endl;
     
     cout << "Finished running assignment VII." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_viii() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment VIII." << endl << endl;
+    
+    cout << "Correcting positional velocities." << endl;
+    
+    steps[1].positinal_velocity = steps[1].positinal_velocity_to_next;
+    steps.back().positinal_velocity = steps.back().positinal_velocity_to_next;
+    
+    int number_of_steps = steps.size() - 1;
+    for (int i = 2; i < number_of_steps; i++) {
+        steps[i].positinal_velocity = (steps[i].positinal_velocity_to_next + steps[i - 1].positinal_velocity_to_next) / 2.0;
+    }
+    
+    cout << "Results:" << endl;
+    cout << "v(2)  \t" << steps[2].positinal_velocity << endl;
+    cout << "v(10) \t" << steps[10].positinal_velocity << endl;
+    
+    cout << "Finished running assignment VIII." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_ix() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment IX." << endl << endl;
+    
+    cout << "Correcting angular velocities." << endl;
+    
+    steps[1].angular_velocity = steps[1].angular_velocity_to_next;
+    steps.back().angular_velocity = steps.back().angular_velocity_to_next;
+    
+    int number_of_steps = steps.size() - 1;
+    for (int i = 2; i < number_of_steps; i++) {
+        steps[i].angular_velocity = (steps[i].angular_velocity_to_next + steps[i - 1].angular_velocity_to_next) / 2.0;
+    }
+    
+    cout << "Results:" << endl;
+    cout << "w(2)  \t" << steps[2].angular_velocity << endl;
+    cout << "w(10) \t" << steps[10].angular_velocity << endl;
+    
+    cout << "Finished running assignment IX." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
