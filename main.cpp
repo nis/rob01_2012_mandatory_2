@@ -16,7 +16,7 @@ struct Step {
     Transform3D<> t_desired;
     Q linear_interpolated_joint_configuration;
     double delta;
-    Vector3D<> positinal_velocity;
+    Vector3D<> positinal_velocity_to_next;
 };
 
 void ass_i();
@@ -274,12 +274,12 @@ void ass_vi() {
     
     int number_of_steps = steps.size() - 1;
     for (int i = 1; i < number_of_steps; i++) {
-        steps[i].positinal_velocity = (steps[i + 1].t_desired.P() - steps[i].t_desired.P()) / (steps[i + 1].time - steps[i].time);
+        steps[i].positinal_velocity_to_next = (steps[i + 1].t_desired.P() - steps[i].t_desired.P()) / (steps[i + 1].time - steps[i].time);
     }
     
     cout << "Results:" << endl;
-    cout << "v(1,2)  \t" << steps[1].positinal_velocity << endl;
-    cout << "v(9,10) \t" << steps[9].positinal_velocity << endl;
+    cout << "v(1,2)  \t" << steps[1].positinal_velocity_to_next << endl;
+    cout << "v(9,10) \t" << steps[9].positinal_velocity_to_next << endl;
     
     cout << "Finished running assignment VI." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
