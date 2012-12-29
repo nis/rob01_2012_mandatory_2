@@ -186,6 +186,12 @@ void ass_iv(vector<Step>& isteps) {
             isteps.push_back(s);
         }
     }
+    // Add the last step
+    Step s;
+    s.t_desired = steps.back().t_desired;
+    s.time = steps.back().time;
+    isteps.push_back(s);
+    
     cout << "Done splitting. " << isteps.size() << " interpolated steps created." << endl << endl;
     
     cout << "First transform:" << endl;
