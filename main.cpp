@@ -20,6 +20,7 @@ struct Step {
     Vector3D<> angular_velocity_to_next;
     Vector3D<> positional_velocity;
     Vector3D<> angular_velocity;
+    Q qdot;
 };
 
 void ass_i();
@@ -31,6 +32,7 @@ void ass_vi();
 void ass_vii();
 void ass_viii();
 void ass_ix();
+void ass_x();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -96,11 +98,11 @@ int main(int argc, char** argv) {
     ass_iii();
     
     // Compute linear interpolation
-//    vector<Step> linear_interpolated_steps; // For saving the interpolated steps
-//    ass_iv(linear_interpolated_steps);
+    vector<Step> linear_interpolated_steps; // For saving the interpolated steps
+    ass_iv(linear_interpolated_steps);
     
     // Use algoritm 3 to get the joint configurations
-//    ass_v(linear_interpolated_steps);
+    ass_v(linear_interpolated_steps);
     
     // Computer Positional velocities
     ass_vi();
@@ -113,6 +115,9 @@ int main(int argc, char** argv) {
     
     // Correct Angular velocities
     ass_ix();
+    
+    // Convert passage velocities to joint velocities
+    ass_x();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -362,6 +367,28 @@ void ass_ix() {
     cout << "w(10) \t" << steps[10].angular_velocity << endl;
     
     cout << "Finished running assignment IX." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_x() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment X." << endl << endl;
+    
+    cout << "Converting passage velocities to joint velocities." << endl;
+    
+    State state = start_state;
+    for (int i = 1; i < steps.size(); i++) {
+        VelocityScrew6D<> u(steps[i].positional_velocity[0], steps[i].positional_velocity[1], steps[i].positional_velocity[2], steps[i].angular_velocity[0], steps[i].angular_velocity[1], steps[i].angular_velocity[2]);
+        device->setQ(steps[i].linear_interpolated_joint_configuration, state);
+        Q qdot(prod(LinearAlgebra::inverse(device->baseJframe(tool, state).m()), u.m()));
+        steps[i].qdot = qdot;
+    }
+    
+    cout << "Results:" << endl;
+    cout << "qdot(2)  \t" << steps[2].qdot << endl;
+    cout << "qdot(10) \t" << steps[10].qdot << endl;
+    
+    cout << "Finished running assignment X." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
