@@ -33,6 +33,7 @@ void ass_vii();
 void ass_viii();
 void ass_ix();
 void ass_x();
+void ass_xi();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -43,6 +44,7 @@ Vector3D<> w_of_rot(Rotation3D<>& r);
 Rotation3D<> reaa(Vector3D<>& v, double& theta);
 Rotation3D<> reaa(Vector3D<>& x);
 void calculate_delta_u(Transform3D<>& tq, Transform3D<>& td, VelocityScrew6D<double>& deltau);
+Q cubic_spline(double t, double ts, double tf, Q qs, Q qf, Q vs, Q vf);
 
 // Global data
 WorkCell::Ptr wc;
@@ -118,6 +120,9 @@ int main(int argc, char** argv) {
     
     // Convert passage velocities to joint velocities
     ass_x();
+    
+    // Show cubic splines
+    ass_xi();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -390,6 +395,25 @@ void ass_x() {
     
     cout << "Finished running assignment X." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_xi() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment XI." << endl << endl;
+    
+    cout << "Showing cubic splines values." << endl;
+    
+    cout << "Results:" << endl;
+    cout << "First Q: \t" << cubic_spline(steps[2].time / 2.0, steps[1].time, steps[2].time, steps[1].linear_interpolated_joint_configuration, steps[2].linear_interpolated_joint_configuration, steps[1].qdot, steps[2].qdot) << endl;
+    cout << "Second Q: \t" << cubic_spline(((steps[9].time / 3.0) + ((2.0 * steps[10].time) / 3)), steps[9].time, steps[10].time, steps[9].linear_interpolated_joint_configuration, steps[10].linear_interpolated_joint_configuration, steps[9].qdot, steps[10].qdot) << endl;
+    
+    cout << "Finished running assignment XI." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+Q cubic_spline(double t, double ts, double tf, Q qs, Q qf, Q vs, Q vf) {
+    Q result = (-2.0 * (qf - qs) + (tf - ts) * (vs + vf)) * pow((t - ts)/(tf - ts), 3.0) + (3.0 * (qf - qs) - (tf - ts) * (2.0 * vs + vf)) * pow((t - ts)/(tf - ts), 2.0) + vs * (t - ts) + qs;
+    return result;
 }
 
 Transform3D<> linear_interpolate(Step& from, Step& to, double t) {
