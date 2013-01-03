@@ -15,6 +15,7 @@ struct Step {
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
     Q linear_interpolated_joint_configuration;
+    Q joint_configuration;
     double delta;
     Vector3D<> positional_velocity_to_next;
     Vector3D<> angular_velocity_to_next;
@@ -34,6 +35,7 @@ void ass_viii();
 void ass_ix();
 void ass_x();
 void ass_xi();
+void ass_xii();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -52,6 +54,7 @@ Device::Ptr device;
 Frame* tool;
 State start_state;
 vector<Step> steps;
+vector<Step> finished_steps;
 
 // Defines:
 #define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
@@ -61,6 +64,7 @@ vector<Step> steps;
 #define V_MILLING 0.05
 #define LINIEAR_INTERPOLATION_STEPS 26
 #define WORKSPACE_SIZE 2.8
+#define FINISHED_STEPS 20000
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -123,6 +127,10 @@ int main(int argc, char** argv) {
     
     // Show cubic splines
     ass_xi();
+    
+    // 20000 steps
+    ass_xii();
+    
     
 	cout << "Program done." << endl;
 	return 0;
@@ -408,6 +416,43 @@ void ass_xi() {
     cout << "Second Q: \t" << cubic_spline(((steps[9].time / 3.0) + ((2.0 * steps[10].time) / 3)), steps[9].time, steps[10].time, steps[9].linear_interpolated_joint_configuration, steps[10].linear_interpolated_joint_configuration, steps[9].qdot, steps[10].qdot) << endl;
     
     cout << "Finished running assignment XI." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_xii() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment XII." << endl << endl;
+    
+    cout << "Making a " << FINISHED_STEPS << " step path." << endl;
+    
+    double h = (steps.back().time - steps[1].time) / FINISHED_STEPS;
+    Step s;
+    finished_steps.push_back(s);
+    int step_index = 1;
+    
+    s.joint_configuration = steps[1].linear_interpolated_joint_configuration;
+    s.time = steps[1].time;
+    finished_steps.push_back(s);
+    
+    double current_time = steps[1].time;
+    for (int i = 1; i <= FINISHED_STEPS; i++) {
+        current_time = current_time + h;
+        s.time = current_time;
+        
+        while (current_time > steps[step_index + 1].time) {
+            step_index++;
+        }
+        
+        s.joint_configuration = cubic_spline(current_time, steps[step_index].time, steps[step_index + 1].time, steps[step_index].linear_interpolated_joint_configuration, steps[step_index + 1].linear_interpolated_joint_configuration, steps[step_index].qdot, steps[step_index + 1].qdot);
+        
+        finished_steps.push_back(s);
+    }
+    
+    cout << "Results:" << endl;
+    cout << "Q(5): \t" << finished_steps[5].joint_configuration << endl;
+    cout << "Q(200): " << finished_steps[200].joint_configuration << endl;
+    
+    cout << "Finished running assignment XII." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
