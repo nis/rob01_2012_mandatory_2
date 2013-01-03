@@ -65,6 +65,7 @@ vector<Step> finished_steps;
 #define LINIEAR_INTERPOLATION_STEPS 26
 #define WORKSPACE_SIZE 2.8
 #define FINISHED_STEPS 20000
+#define OUTPUT_FILE "/Users/tamen/Desktop/joint_configurations.dat"
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -435,7 +436,7 @@ void ass_xii() {
     finished_steps.push_back(s);
     
     double current_time = steps[1].time;
-    for (int i = 1; i <= FINISHED_STEPS; i++) {
+    for (int i = 1; i < FINISHED_STEPS; i++) {
         current_time = current_time + h;
         s.time = current_time;
         
@@ -447,6 +448,28 @@ void ass_xii() {
         
         finished_steps.push_back(s);
     }
+    
+    cout << "Outputting the " << finished_steps.size() - 1 << " joint configurations to: " << OUTPUT_FILE << endl;
+    ofstream out;
+    out.open(OUTPUT_FILE, ios::out | ios::trunc);
+    if (out.is_open()) {
+        for (int i = 1; i < finished_steps.size(); i++) {
+            if (finished_steps[i].joint_configuration.size() != 6) {
+                cout << "Empty Q at index: " << i << endl;
+            } else {
+                out << finished_steps[i].joint_configuration(0) << " ";
+                out << finished_steps[i].joint_configuration(1) << " ";
+                out << finished_steps[i].joint_configuration(2) << " ";
+                out << finished_steps[i].joint_configuration(3) << " ";
+                out << finished_steps[i].joint_configuration(4) << " ";
+                out << finished_steps[i].joint_configuration(5) << " ";
+                out << endl;
+            }
+        }
+    } else {
+        cout << "Could not open file!" << endl;
+    }
+    out.close();
     
     cout << "Results:" << endl;
     cout << "Q(5): \t" << finished_steps[5].joint_configuration << endl;
