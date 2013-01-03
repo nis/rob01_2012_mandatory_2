@@ -12,6 +12,7 @@ using namespace rw::kinematics;
 // Struct to hold the individual steps
 struct Step {
     double time;
+    double shifted_time;
     Transform3D<> t_world_desired;
     Transform3D<> t_desired;
     Q linear_interpolated_joint_configuration;
@@ -36,6 +37,7 @@ void ass_ix();
 void ass_x();
 void ass_xi();
 void ass_xii();
+void ass_xiv();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -47,6 +49,7 @@ Rotation3D<> reaa(Vector3D<>& v, double& theta);
 Rotation3D<> reaa(Vector3D<>& x);
 void calculate_delta_u(Transform3D<>& tq, Transform3D<>& td, VelocityScrew6D<double>& deltau);
 Q cubic_spline(double t, double ts, double tf, Q qs, Q qf, Q vs, Q vf);
+double velocity_scaling(Q& vmax, Step& previous, Step& current);
 
 // Global data
 WorkCell::Ptr wc;
@@ -55,6 +58,7 @@ Frame* tool;
 State start_state;
 vector<Step> steps;
 vector<Step> finished_steps;
+vector<Step> fast_steps;
 
 // Defines:
 #define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
@@ -132,6 +136,7 @@ int main(int argc, char** argv) {
     // 20000 steps
     ass_xii();
     
+    ass_xiv();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -477,6 +482,56 @@ void ass_xii() {
     
     cout << "Finished running assignment XII." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_xiv() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment XIV." << endl << endl;
+    
+    cout << "Computing fastest time-profile" << endl;
+    Q vmax = device->getVelocityLimits();
+    
+    Step s;
+    fast_steps.push_back(s);
+    
+    s = finished_steps[1];
+    s.shifted_time = 0;
+    fast_steps.push_back(s);
+    
+    for (int i = 2; i < finished_steps.size() - 2; i++) {
+        // Check for the unfortunate NaNs.
+        if (!isnan(finished_steps[i].joint_configuration[0]) && !isnan(finished_steps[i - 1].joint_configuration[0]) && finished_steps[i].joint_configuration.size() == 6 && finished_steps[i - 1].joint_configuration.size() == 6) {
+            s = finished_steps[i];
+            s.shifted_time = velocity_scaling(vmax, finished_steps[i - 1], finished_steps[i]);
+            fast_steps.push_back(s);
+        }
+    }
+    
+    cout << "Original execution-time: \t" << finished_steps.back().time - finished_steps[1].time << endl;
+    cout << "Fastest execution-time: \t" << fast_steps[fast_steps.size() - 1].shifted_time - fast_steps[1].shifted_time << endl;
+    cout << "These results are not correct!" << endl;
+    
+    cout << "Finished running assignment XIV." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+double velocity_scaling(Q& vmax, Step& previous, Step& current) {
+    double result;
+    
+    double best_time = abs(current.joint_configuration[0] - previous.joint_configuration[0]) / (double)vmax[0];
+    double temp_time = 0.0;
+    
+    for (int i = 1; i < current.joint_configuration.size(); i++) {
+        temp_time = abs(current.joint_configuration[i] - previous.joint_configuration[i]) / (double)vmax[i];
+        
+        if (temp_time > best_time) {
+            best_time = temp_time;
+        }
+    }
+    
+    result = best_time + previous.shifted_time;
+    
+    return result;
 }
 
 Q cubic_spline(double t, double ts, double tf, Q qs, Q qf, Q vs, Q vf) {
