@@ -38,6 +38,8 @@ void ass_x();
 void ass_xi();
 void ass_xii();
 void ass_xiv();
+void ass_xv();
+void ass_xvi();
 
 // Utility functions
 void print_xyzrpy(Transform3D<>& transform);
@@ -59,6 +61,7 @@ State start_state;
 vector<Step> steps;
 vector<Step> finished_steps;
 vector<Step> fast_steps;
+vector<Step> final_steps;
 
 // Defines:
 #define SCENE_FILE "/Users/tamen/Documents/Archive/Skole/SDU/7Semester/ROB/Exercises/Mandatory2/KUKA_KR120_scene/Rob01MillingSceneKR120.wc.xml"
@@ -70,6 +73,9 @@ vector<Step> fast_steps;
 #define WORKSPACE_SIZE 2.8
 #define FINISHED_STEPS 20000
 #define OUTPUT_FILE "/Users/tamen/Desktop/joint_configurations.dat"
+#define OUTPUT_FILE_TWO "/Users/tamen/Desktop/joint_configurations_2.dat"
+#define APPROACH_AND_EXIT_STEP_NUMBER 100
+#define APPROACH_AND_EXIT_TIME 5
 
 int main(int argc, char** argv) {
     cout << "Program startet." << endl;
@@ -136,7 +142,14 @@ int main(int argc, char** argv) {
     // 20000 steps
     ass_xii();
     
+    // Fasttrack the Q's
     ass_xiv();
+    
+    // Add approach and exit
+    ass_xv();
+    
+    // Export the big final list
+    ass_xvi();
     
 	cout << "Program done." << endl;
 	return 0;
@@ -508,10 +521,124 @@ void ass_xiv() {
     }
     
     cout << "Original execution-time: \t" << finished_steps.back().time - finished_steps[1].time << endl;
-    cout << "Fastest execution-time: \t" << fast_steps[fast_steps.size() - 1].shifted_time - fast_steps[1].shifted_time << endl;
+    cout << "Fastest execution-time: \t" << fast_steps[fast_steps.size() - 2].shifted_time - fast_steps[1].shifted_time << endl;
     cout << "These results are not correct!" << endl;
     
     cout << "Finished running assignment XIV." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_xv() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment XV." << endl << endl;
+    
+    cout << "Adding approach and exit trajectories." << endl;
+    
+//    cout << finished_steps[1].qdot;
+//    cout << finished_steps.back().qdot;
+//    cout << finished_steps[finished_steps.size() - 1].joint_configuration << endl;
+//    cout << finished_steps[finished_steps.size() - 1].time << endl;
+//    cout << finished_steps[finished_steps.size() - 2].joint_configuration << endl;
+//    cout << finished_steps[finished_steps.size() - 2].time << endl;
+    
+    vector<Step> approach;
+    vector<Step> exit;
+    
+    Q q_approach_start(6, 0.0, -Pi/2.0, Pi/2.0, 0.0, -0.1745, 0.0);
+    Q q_approach_end = finished_steps[1].joint_configuration;
+    double approach_start_time = 0;
+    double approach_end_time = APPROACH_AND_EXIT_TIME;
+    
+    Step s;
+    s.time = 0.0;
+    s.joint_configuration = q_approach_start;
+    approach.push_back(s);
+
+    
+    double current_time = 0.0;
+    double time_inc = ((double)APPROACH_AND_EXIT_TIME / (double)APPROACH_AND_EXIT_STEP_NUMBER);
+    for (int i = 1; i < APPROACH_AND_EXIT_STEP_NUMBER; i++) {
+        current_time = current_time + time_inc;
+        s.time = current_time;
+        s.joint_configuration = q_approach_start + ((current_time - approach_start_time) / (approach_start_time - approach_end_time)) * (q_approach_end - q_approach_start);
+        approach.push_back(s);
+    }
+    
+    Q q_exit_start = finished_steps.back().joint_configuration;
+    Q q_exit_end(6, 0.0, -(Pi/4.0), Pi/8.0, 0.0, 1.0, 0.0);
+    double exit_start_time = 0;
+    double exit_end_time = APPROACH_AND_EXIT_TIME;
+    
+    s.time = 0.0;
+    s.joint_configuration = q_exit_start;
+    exit.push_back(s);
+    
+    current_time = 0.0;
+    time_inc = ((double)APPROACH_AND_EXIT_TIME / (double)APPROACH_AND_EXIT_STEP_NUMBER);
+    for (int i = 1; i < APPROACH_AND_EXIT_STEP_NUMBER; i++) {
+        current_time = current_time + time_inc;
+        s.time = current_time;
+        s.joint_configuration = q_exit_start + ((current_time - exit_start_time) / (exit_start_time - exit_end_time)) * (q_exit_end - q_exit_start);
+        approach.push_back(s);
+    }
+    
+    s.time = (double)APPROACH_AND_EXIT_TIME;
+    s.joint_configuration = q_exit_end;
+    exit.push_back(s);
+    
+    double break_time = 0.0;
+    int last_approach_index = 0;
+    for (int i = 0; i < approach.size(); i++) {
+        final_steps.push_back(approach[i]);
+        break_time = final_steps.back().time;
+        last_approach_index = i;
+    }
+    
+    double second_break_time = 0.0;
+    int last_main_index = 0;
+    for (int i = 0; i < finished_steps.size() - 1; i++) {
+        final_steps.push_back(finished_steps[i]);
+        final_steps.back().time += break_time;
+        second_break_time = final_steps.back().time;
+        last_main_index = i;
+    }
+    
+    for (int i = 0; i < exit.size(); i++) {
+        final_steps.push_back(exit[i]);
+        final_steps.back().time += second_break_time;
+    }
+    
+    cout << "Finished running assignment XV." << endl;
+    cout << "------------------------------------------------------------------------" << endl << endl;
+}
+
+void ass_xvi() {
+    cout << "------------------------------------------------------------------------" << endl;
+    cout << "Running assignment XVI." << endl << endl;
+    
+    cout << "Outputting the " << final_steps.size() - 1 << " joint configurations to: " << OUTPUT_FILE_TWO << endl;
+    ofstream out;
+    out.open(OUTPUT_FILE_TWO, ios::out | ios::trunc);
+    if (out.is_open()) {
+        for (int i = 0; i < final_steps.size(); i++) {
+            if (final_steps[i].joint_configuration.size() != 6) {
+                cout << "Empty Q at index: " << i << endl;
+            } else {
+                out << final_steps[i].joint_configuration(0) << " ";
+                out << final_steps[i].joint_configuration(1) << " ";
+                out << final_steps[i].joint_configuration(2) << " ";
+                out << final_steps[i].joint_configuration(3) << " ";
+                out << final_steps[i].joint_configuration(4) << " ";
+                out << final_steps[i].joint_configuration(5) << " ";
+                out << endl;
+            }
+        }
+    } else {
+        cout << "Could not open file!" << endl;
+    }
+    out.close();
+    
+    cout << "Finished running assignment XVI." << endl;
     cout << "------------------------------------------------------------------------" << endl << endl;
 }
 
