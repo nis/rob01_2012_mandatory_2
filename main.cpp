@@ -621,7 +621,7 @@ void ass_xv() {
     for (int i = 1; i < APPROACH_AND_EXIT_STEP_NUMBER; i++) {
         current_time = current_time + time_inc;
         s.time = current_time;
-        s.joint_configuration = q_approach_start + ((current_time - approach_start_time) / (approach_start_time - approach_end_time)) * (q_approach_end - q_approach_start);
+        s.joint_configuration = q_approach_start + ((current_time - approach_start_time) / (approach_end_time - approach_start_time)) * (q_approach_end - q_approach_start);
         approach.push_back(s);
     }
     
@@ -639,8 +639,8 @@ void ass_xv() {
     for (int i = 1; i < APPROACH_AND_EXIT_STEP_NUMBER; i++) {
         current_time = current_time + time_inc;
         s.time = current_time;
-        s.joint_configuration = q_exit_start + ((current_time - exit_start_time) / (exit_start_time - exit_end_time)) * (q_exit_end - q_exit_start);
-        approach.push_back(s);
+        s.joint_configuration = q_exit_start + ((current_time - exit_start_time) / (exit_end_time - exit_start_time)) * (q_exit_end - q_exit_start);
+        exit.push_back(s);
     }
     
     s.time = (double)APPROACH_AND_EXIT_TIME;
